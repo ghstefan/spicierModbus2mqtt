@@ -221,7 +221,7 @@ class Poller:
                             p.failcounter=3
                         p.failCount(p.failed)
                     if verbosity >= 1:
-                        print("MODBUS connection error, trying again...")
+                        print("MODBUS connection error (poller), trying again...")
 
     def checkPoll(self):
         if time.clock_gettime(0) >= self.next_due and not self.disabled:
@@ -812,7 +812,7 @@ def main():
                         p.failcounter=3
                     p.failCount(p.failed)
                 if verbosity >= 1:
-                    print("MODBUS connection error, trying again...")
+                    print("MODBUS connection error (mainLoop), trying again...")
     
         if not mqc.initial_connection_attempted:
            try:
